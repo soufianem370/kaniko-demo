@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: soufianemkanikodemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: soufianemkanikodemo
+  template:
+    metadata:
+      labels:
+        app: soufianemkanikodemo 
+    spec:
+      containers:
+        - name: soufianemkanikodemo 
+          image: kanikodemo01.azurecr.io/soufianemkanikodemo
+          ports:
+          - containerPort: 80
